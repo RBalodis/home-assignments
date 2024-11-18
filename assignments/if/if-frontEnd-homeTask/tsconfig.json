@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "lib": [
+            "es5",
+            "es6",
+            "es7",
+            "ES2017",
+            "ES2018",
+            "ES2019",
+            "ES2020",
+            "ESNext",
+            "dom"
+        ],
+        "module": "ESNext",
+        "sourceMap": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": false,
+        "strictNullChecks": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "typeRoots": ["./node_modules/@types"],
+        "resolveJsonModule": true,
+        "types": ["typePatches", "jest", "node", "@testing-library/jest-dom"]
+    },
+    "exclude": ["node_modules", "build", "dist", "scripts", "webpack", "jest"],
+    "types": ["typePatches"],
+    "globals": {
+        "JSX": true
+    },
+    "files": ["./typings.d.ts"]
+}

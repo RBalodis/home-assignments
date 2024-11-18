@@ -1,0 +1,12 @@
+UZDEVUMS
+==================
+
+Vide: Microsoft Visual Studio IDE, C# programmēšanas valoda.
+
+Uzdevums: 
+1. izskatīt kodu failā "kods.cs"
+1.1 ko dara (kādam mērķim paredzēta) funcija "GetBasketHtml"?
+1.2 kāpēc lietotas vairākas "GetBasketLineTotals" funkcijas?
+1.3 kādas .NET bibliotēkas (using ... ) jāizmanto, lai kods būtu darboties spējīgs (kodā izmantotas tikai standarta .NET biblioēkas)?
+
+Lai sokas!

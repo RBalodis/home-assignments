@@ -1,0 +1,16 @@
+UZDEVUMS
+==================
+
+Vide: Micsrosoft SQL serveris (izmantojama bezaksas versija "SQL Server Express").
+
+Uzdevums: 
+1. Uzrakstīt SQL skriptu, kas sagatavo tabulu ar 10 ierakstiem, kas satur dinamiski uzģenerētus gadījuma simbolu kodus, kuri:
+1.1 ir 6 simbolu gari
+1.2 satur ciparus un burtus
+1.3 tiek izmantoti tikai ANSI burti
+1.4 tiek izmantoti tikai lielie burti
+1.5 simbolos nedrīkst iekļaut simbolus "0" [cipars - nulle] un "O" [burts - lielais O]
+
+Praksē tas būtu, piemēram, unikāli pasūtījumu numuri. 
+
+Lai sokas!

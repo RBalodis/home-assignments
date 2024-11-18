@@ -1,0 +1,1 @@
+You can perform it in one of the technologies: native android, native iOS, or Flutter. Upload the result to git (e.g. Github, Gitlab) or send it as a .zip archive. Please find the requirements here: https://github.com/ChiliLabs/test-tasks

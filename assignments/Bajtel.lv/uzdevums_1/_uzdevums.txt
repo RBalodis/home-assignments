@@ -1,0 +1,16 @@
+UZDEVUMS
+==================
+
+Vide: Micsrosoft SQL serveris (izmantojama bezaksas versija "SQL Server Express").
+
+Mērķis:
+1. Sagatavot datus (A_datu_sagatavoana.sql)
+2. Izpildīt datu apstrādes procedūru (B_datu_apstrade.sql)
+
+Uzdevumi:
+1. Izskaidrot, kas notiek datu apstrādes procedūrā?
+2. Kāpēc lietota BEGIN/COMMIT/ROLLBACK TRANSACTION konstrukcija? Kāds ir tās pozitīvais pienesums?
+3. Kāpēc lietota BEGIN/END TRY/CATCH konstrukcija? Kāds ir tās pozitīvais pienesums?
+4. Datu sagatavošanā un/vai datu apstrādē ir pielaistas 2 kļūdas. Kas ir šīs kļūdas? Kā tās novērst?
+
+Lai sokas!

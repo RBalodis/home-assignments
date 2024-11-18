@@ -1,0 +1,50 @@
+## Overview
+
+The purpose of this task is to find out how you solve problems and to showcase your skills, not just
+to solve the problem. Please explain your approach, assumptions, difficulties, reference materials,
+and any set-up instructions in a README file accompanying your code.
+We are especially interested in:
+• Code quality
+• Code readability
+• Testing methods
+The task consists of several parts which are sequential. Completing more than one part will help us
+better determine whether your skills match the needs of Encontrol Baltic, but is optional.
+It is recommended to store the completed code in a git repository accessible by us.
+
+## Part 1
+
+Create a class that implements the following interface:
+public interface IRomanNumeralGenerator {
+string Generate(int number);
+}
+Examples of input and output data:
+1 = “I”
+5 = “V”
+10 = “X”
+20 = “XX”
+3999 = “MMMCMXCIX”
+Acceptance criteria:
+The logic should support numbers from 1 to 3999.
+Implementation should be written in C#.
+Code, comments, and description should be written in English.
+Roman numeral description is available here http://en.wikipedia.org/wiki/Roman_numeralsEncontrol Baltic
+
+## Part 2
+
+Create an ASP.NET Web API application which responds to HTTP requests for generating Roman
+numerals. Use the interface and implementation created in part 1.
+
+## Part 3
+
+Create an ASP.NET MVC/Pages/Blazor application which calls the Web API created in part 2 to
+generate Roman numerals and show the results.
+
+## Part 4
+
+Create a WPF application, which calls the Web API created in part 2 to generate Roman numerals
+and show the results.
+
+## Part 5
+
+Extend the Web API created in part 2 so that it logs the input and output data of each request for
+history purposes. Use an SQL Server database.

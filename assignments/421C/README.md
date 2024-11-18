@@ -1,0 +1,3 @@
+### Uzdevuma teksts ir nokodēts, bet ar diezgan populāru algoritmu
+
+VXpkZXZ1bXMgaXIgaXp2ZWlkb3QgcGhwIHNrcmlwdHUga2FzIHV6Z2VuZXJlIHRhZHUgZXhjZWwgZmFpbHUga2EgcmVkemFtcyBzZWl0IGZhaWxpZW0ubHYvZi85OTg0NzQzOGIgVmVydGliYXMgbmF2IHRpayBzdmFyaWdhcyAtIGdhbHZlbmFpcyBpciBmb3JtYXRz

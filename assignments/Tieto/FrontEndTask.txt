@@ -1,0 +1,15 @@
+Uzdevums:
+Izveidot React.js aplikāciju, kas ļauj aprēķināt ikmēneša tēriņus.
+Aplikācija piedāvā ievadīt finansiālās saistības, kur ievades lauki ir - saistības nosaukums,
+aizdevuma pamatsumma, aizdevuma termiņš (mēneši), aizdevuma procenti mēnesī no
+atlikušās pamatsummas (procenti).
+Aplikācija izrēķina un parāda visu ievadīto saistību kopējo informāciju pa mēnešiem - cik
+katrā mēnesī kopā jāsedz saistību pamatsummas apjoms un cik procentu maksājumu
+apjoms.
+Kas darbā tiks vērtēts visvairāk:
+- koda struktūra un lasāmība
+- aplikācijas biznesa loģikas komponenšu izdalīšana no aplikācijas vizuālā noformējuma
+- risinājuma vienkāršums
+Kā darbu iesniegt:
+Vēlams ar aplikācijas nokompilēšanas instrukcijām, arhīva formā vai kā linku uz kādu
+publisku failu serveri vai koda repozitoriju.
