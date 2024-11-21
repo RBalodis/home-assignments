@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atea.Scraper", "Atea.Scraper\Atea.Scraper.csproj", "{D036EB51-8D78-4EDD-9759-21D84C43C9CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D036EB51-8D78-4EDD-9759-21D84C43C9CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D036EB51-8D78-4EDD-9759-21D84C43C9CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D036EB51-8D78-4EDD-9759-21D84C43C9CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D036EB51-8D78-4EDD-9759-21D84C43C9CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
