@@ -5,6 +5,6 @@ namespace Atea.Scraper.Services;
 
 public interface IStorageService
 {
-    TableServiceClient GetTableServiceClient();
-    BlobServiceClient GetBlobServiceClient();
+    Task<TableClient> GetOrCreateTableClientAsync(string tableName);
+    BlobContainerClient GetBlobContainerClient(string containerName);
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using Atea.Scraper.Models;
+using Atea.Scraper.Services;
 using Azure;
 using Azure.Data.Tables;
 using Azure.Storage.Blobs;
@@ -14,10 +15,12 @@ namespace Atea.Scraper;
 public class Scraper
 {
     private readonly ILogger<Scraper> _logger;
+    private readonly IStorageService _storageService;
 
-    public Scraper(ILogger<Scraper> logger)
+    public Scraper(ILogger<Scraper> logger, IStorageService storageService)
     {
         _logger = logger;
+        _storageService = storageService;
     }
     
     //https://restcountries.com/v3.1/lang/latvian
@@ -29,20 +32,15 @@ public class Scraper
         var response = await apiClient.GetCountriesAsync("latvian");
         bool success = response.Count != 0;
 
-        var tableServiceClient = new TableServiceClient("UseDevelopmentStorage=true");
-        await tableServiceClient.CreateTableIfNotExistsAsync("atea");
-        var tableClient = tableServiceClient.GetTableClient("atea");
+        var table = _storageService.GetOrCreateTableClientAsync("atea");
         var key = Guid.NewGuid();
-        tableClient.AddEntity(new TableEntity(success)
+        table.Result.AddEntity(new TableEntity(success)
         {
             PartitionKey = key.ToString(),
             RowKey = key.ToString(),
         });
         
-        var blobServiceClient = new BlobServiceClient("UseDevelopmentStorage=true");
-        var result =  blobServiceClient.GetBlobContainerClient("atea");
-        
-        await result.CreateIfNotExistsAsync();
+        var result = _storageService.GetBlobContainerClient("atea");
         await result.UploadBlobAsync($"{key.ToString()}.json", BinaryData.FromObjectAsJson(response));
         
         _logger.LogInformation("action performed");

@@ -14,6 +14,18 @@ public class StorageService : IStorageService
         _tableServiceClient = new TableServiceClient(connectionString);
         _blobServiceClient = new BlobServiceClient(connectionString);
     }
-    public TableServiceClient GetTableServiceClient() => _tableServiceClient;
-    public BlobServiceClient GetBlobServiceClient() => _blobServiceClient;
+
+    public async Task<TableClient> GetOrCreateTableClientAsync(string tableName)
+    {
+        var tableClient = _tableServiceClient.GetTableClient(tableName);
+        await tableClient.CreateIfNotExistsAsync();
+        return tableClient;
+    }
+
+    public BlobContainerClient GetBlobContainerClient(string containerName)
+    {
+        var blobContainerClient = _blobServiceClient.GetBlobContainerClient(containerName);
+        blobContainerClient.CreateIfNotExists();
+        return blobContainerClient;
+    }
 }

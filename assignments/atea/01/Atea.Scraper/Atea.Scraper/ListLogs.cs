@@ -1,4 +1,5 @@
-﻿using Azure.Data.Tables;
+﻿using Atea.Scraper.Services;
+using Azure.Data.Tables;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
@@ -9,27 +10,29 @@ namespace Atea.Scraper;
 public class ListLogs
 {
     private readonly ILogger<ListLogs> _logger;
+    private readonly IStorageService _storageService;
 
-    public ListLogs(ILogger<ListLogs> logger)
+    public ListLogs(ILogger<ListLogs> logger, IStorageService storageService)
     {
         _logger = logger;
+        _storageService = storageService;
     }
 
     [Function("ListLogs")]
-    public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequest req)
+    public async Task<IActionResult> Run([HttpTrigger(AuthorizationLevel.Function, "get")] HttpRequest req)
     {
         DateTimeOffset.TryParse(req.Query["from"], out var from);
         DateTimeOffset.TryParse(req.Query["to"], out var to);
+
+        var table = await _storageService.GetOrCreateTableClientAsync("atea");
         
-        var tableServiceClient = new TableServiceClient("UseDevelopmentStorage=true");
-        await tableServiceClient.CreateTableIfNotExistsAsync("atea");
-        var tableClient = tableServiceClient.GetTableClient("atea");
-        var records = tableClient.Query<TableEntity>(item =>
-            item.Timestamp.Value >= from && item.Timestamp.Value <= to);
+        var records = table.Query<TableEntity>(item => 
+            item.Timestamp!.Value >= from && item.Timestamp.Value <= to);
+        
 
         var response = records.AsPages(null, 50);
-        _logger.LogInformation("C# HTTP trigger function processed a request.");
         
+        _logger.LogInformation("C# HTTP trigger function processed a request.");
         return new OkObjectResult(response);
         
     }
